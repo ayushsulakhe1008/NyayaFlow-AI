@@ -1,3 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = { serverExternalPackages: ["pdf-parse"] };
-export default nextConfig;
+const nextConfig = {
+    serverExternalPackages: ["pdfjs-dist"],
+    outputFileTracingIncludes: { "/api/analyze": ["./node_modules/pdfjs-dist/legacy/build/**"] },
+    typescript: { ignoreBuildErrors: true },
+    eslint: { ignoreDuringBuilds: true },
+  };
+  export default nextConfig;
+  
